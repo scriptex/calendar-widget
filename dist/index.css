@@ -1,0 +1,58 @@
+body table {
+  font-family: monospace;
+  font-size: 1rem;
+  line-height: 2;
+  text-transform: lowercase;
+  width: 20rem;
+  border: 2px solid lightgray;
+  margin: 20px auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0; }
+  body table caption {
+    border: 2px solid lightgray;
+    border-bottom: 0;
+    overflow: hidden; }
+    body table caption span,
+    body table caption button {
+      text-align: center;
+      min-width: calc(20rem / 7 - 1px);
+      height: 26px;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0;
+      border: 0;
+      box-sizing: border-box;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none; }
+      body table caption span:first-child,
+      body table caption button:first-child {
+        float: left;
+        border-right: 2px solid lightgray; }
+      body table caption span:last-child,
+      body table caption button:last-child {
+        min-width: calc(20rem / 7);
+        float: right;
+        border-left: 2px solid lightgray; }
+      body table caption span:first-child, body table caption span:last-child,
+      body table caption button:first-child,
+      body table caption button:last-child {
+        cursor: pointer; }
+        body table caption span:first-child:hover, body table caption span:last-child:hover,
+        body table caption button:first-child:hover,
+        body table caption button:last-child:hover {
+          background-color: lightgray; }
+  body table th,
+  body table td {
+    border: 2px solid lightgray; }
+  body table td {
+    padding: 0 0.5rem; }
+  body table .is--empty {
+    background-color: rgba(211, 211, 211, 0.2);
+    cursor: default; }
+  body table .is--today {
+    background-color: rgba(211, 211, 211, 0.5); }
