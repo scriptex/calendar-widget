@@ -34,28 +34,21 @@ let defaultStartMonth: number = today.getMonth();
 let defaultStartDay: number = today.getDate();
 
 const get = (selector: string): HTMLElement => doc.querySelector(selector);
-const add = (type: string): HTMLElement => doc.createElement(type);
-const onClick = (
-	selector: string,
-	callback: (event: MouseEvent) => void
-): void => get(selector).addEventListener('click', callback);
 
-const renderCaption = (
-	translations: IndexedList<string | string[]>
-): string => `
+const add = (type: string): HTMLElement => doc.createElement(type);
+
+// prettier-ignore
+const onClick = (selector: string, callback: (event: MouseEvent) => void): void => get(selector).addEventListener('click', callback);
+
+const renderCaption = (translations: IndexedList<string | string[]>): string => `
 <caption>
-    <button id="ts-calendar__prev" title="${translations.prevMonthTitle}">${
-	translations.prevMonth
-}</button>
+    <button id="ts-calendar__prev" title="${translations.prevMonthTitle}">${translations.prevMonth}</button>
     <span id="ts-calendar__month"></span>
     <span id="ts-calendar__year"></span>
-    <button id="ts-calendar__next" title="${translations.nextMonthTitle}">${
-	translations.nextMonth
-}</button>
+    <button id="ts-calendar__next" title="${translations.nextMonthTitle}">${translations.nextMonth}</button>
 </caption>
 `;
 
-// prettier-ignore
 const renderDays = (days: string[]): string => days.map((day: string): string => `<th>${day}</th>`).join('');
 
 const renderHeader = (translations: IndexedList<string | string[]>): string => `
@@ -105,11 +98,7 @@ const renderCalendar = (
 			} else {
 				td.innerHTML = day.toString();
 
-				if (
-					year === defaultStartYear &&
-					month === defaultStartMonth &&
-					day === defaultStartDay
-				) {
+				if (year === defaultStartYear && month === defaultStartMonth && day === defaultStartDay) {
 					td.classList.add('is--today');
 				}
 
@@ -123,11 +112,7 @@ const renderCalendar = (
 	}
 };
 
-const addListeners = (
-	startYear: number,
-	startMonth: number,
-	translations: IndexedList<string | string[]>
-): void => {
+const addListeners = (startYear: number, startMonth: number, translations: IndexedList<string | string[]>): void => {
 	onClick('#ts-calendar__prev', (event: MouseEvent) => {
 		event.preventDefault();
 
@@ -171,4 +156,4 @@ export const renderCalendarWidget = (
 	addListeners(startYear, startMonth, translations);
 };
 
-renderCalendarWidget();
+// Usage: renderCalendarWidget();
