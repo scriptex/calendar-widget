@@ -1,3 +1,6 @@
+[![GitHub issues](https://img.shields.io/github/issues/scriptex/calendar-widget.svg)](https://github.com/scriptex/calendar-widget/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/scriptex/calendar-widget.svg)](https://github.com/scriptex/calendar-widget/commits/master)
+[![Build Status](https://travis-ci.org/scriptex/calendar-widget.svg?branch=master)](https://travis-ci.org/scriptex/calendar-widget)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/calendar-widget/README.md)](https://github.com/scriptex/calendar-widget/)
 
 # Calendar Widget
