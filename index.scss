@@ -1,21 +1,21 @@
-$width: 20rem !default;
-$border-color: lightgray !default;
+$defaultWidth: 20rem !default;
+$defaultBorderColor: lightgray !default;
 
-@mixin calendar {
+@mixin calendar($width: $defaultWidth, $borderColor: $defaultBorderColor) {
 	table {
 		font-family: monospace;
 		font-size: 1rem;
 		line-height: 2;
 		text-transform: lowercase;
 		width: $width;
-		border: 2px solid $border-color;
+		border: 2px solid $borderColor;
 		margin: 20px auto;
 		table-layout: fixed;
 		border-collapse: collapse;
 		border-spacing: 0;
 
 		caption {
-			border: 2px solid $border-color;
+			border: 2px solid $borderColor;
 			border-bottom: 0;
 			overflow: hidden;
 
@@ -36,13 +36,13 @@ $border-color: lightgray !default;
 
 				&:first-child {
 					float: left;
-					border-right: 2px solid $border-color;
+					border-right: 2px solid $borderColor;
 				}
 
 				&:last-child {
 					min-width: calc(#{$width} / 7);
 					float: right;
-					border-left: 2px solid $border-color;
+					border-left: 2px solid $borderColor;
 				}
 
 				&:first-child,
@@ -50,7 +50,7 @@ $border-color: lightgray !default;
 					cursor: pointer;
 
 					&:hover {
-						background-color: $border-color;
+						background-color: $borderColor;
 					}
 				}
 			}
@@ -58,7 +58,7 @@ $border-color: lightgray !default;
 
 		th,
 		td {
-			border: 2px solid $border-color;
+			border: 2px solid $borderColor;
 		}
 
 		td {
@@ -66,12 +66,12 @@ $border-color: lightgray !default;
 		}
 
 		.is--empty {
-			background-color: rgba($border-color, 0.2);
+			background-color: rgba($borderColor, 0.2);
 			cursor: default;
 		}
 
 		.is--today {
-			background-color: rgba($border-color, 0.5);
+			background-color: rgba($borderColor, 0.5);
 		}
 	}
 }
