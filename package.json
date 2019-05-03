@@ -1,0 +1,38 @@
+{
+	"name": "calendar-widget",
+	"version": "0.1.0",
+	"description": "A super simple calendar widget written in TypeScript and SCSS",
+	"scripts": {
+		"sass": "node-sass main.scss dist/index.css",
+		"postcss": "postcss dist/index.css -o dist/index.css -c postcss.config.js",
+		"css": "yarn sass && yarn postcss",
+		"js": "tsc -p .",
+		"lint": "tslint -p tsconfig.json -c tslint.json index.ts",
+		"build": "yarn js && yarn css"
+	},
+	"keywords": [
+		"Calendar",
+		"Widget",
+		"TypeScript",
+		"SCSS"
+	],
+	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
+	"repository": "git@github.com:scriptex/calendar-widget.git",
+	"bugs": {
+		"url": "https://github.com/scriptex/calendar-widget/issues",
+		"email": "scriptex.bg@gmail.com"
+	},
+	"license": "MIT",
+	"main": "dist/index.js",
+	"style": "dist/index.css",
+	"dependencies": {},
+	"devDependencies": {
+		"autoprefixer": "^9.5.1",
+		"node-sass": "^4.12.0",
+		"postcss-cli": "^6.1.2",
+		"postcss-flexbugs-fixes": "^4.1.0",
+		"tslint": "^5.16.0",
+		"tslint-config-prettier": "^1.18.0",
+		"typescript": "^3.4.5"
+	}
+}
