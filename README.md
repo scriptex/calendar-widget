@@ -5,7 +5,7 @@
 
 # Calendar Widget
 
-A super simple calendar widget written in TypeScript and SCSS
+A super simple calendar widget written in TypeScript and SCSS implemented with a11y (accessibility) and i18n (internationalization) in mind.
 
 ## Demo
 
