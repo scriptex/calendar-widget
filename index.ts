@@ -156,4 +156,6 @@ export const renderCalendarWidget = (
 	addListeners(startYear, startMonth, translations);
 };
 
+export default renderCalendarWidget;
+
 // Usage: renderCalendarWidget();
