@@ -27,11 +27,10 @@ const selectors: IndexedList<string> = {
 	month: '#ts-calendar__month'
 };
 
-const today = new Date();
-
-let defaultStartYear: number = today.getFullYear();
-let defaultStartMonth: number = today.getMonth();
-let defaultStartDay: number = today.getDate();
+const today: Date = new Date();
+const defaultStartYear: number = today.getFullYear();
+const defaultStartMonth: number = today.getMonth();
+const defaultStartDay: number = today.getDate();
 
 const get = (selector: string): HTMLElement => doc.querySelector(selector);
 
@@ -155,5 +154,7 @@ export const renderCalendarWidget = (
 	renderCalendar(startYear, startMonth, selectors, translations);
 	addListeners(startYear, startMonth, translations);
 };
+
+export default renderCalendarWidget;
 
 // Usage: renderCalendarWidget();

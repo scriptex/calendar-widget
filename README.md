@@ -46,6 +46,9 @@ import { renderCalendarWidget } from 'calendar-widget';
 // Or if you downloaded it manually
 
 import { renderCalendarWidget } from '../your-downloaded-scripts/calendar-widget/dist/index.js';
+
+// You can also use the default export:
+import CalendarWidget from 'calendar-widget';
 ```
 
 You can now use the widget:

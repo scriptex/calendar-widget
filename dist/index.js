@@ -107,5 +107,6 @@
         renderCalendar(startYear, startMonth, selectors, translations);
         addListeners(startYear, startMonth, translations);
     };
+    exports.default = exports.renderCalendarWidget;
 });
 // Usage: renderCalendarWidget();
