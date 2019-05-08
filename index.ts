@@ -136,7 +136,7 @@ const addListeners = (startYear: number, startMonth: number, translations: Index
 	});
 };
 
-export const defaultTranslations: IndexedList<string | string[]> = {
+const defaultTranslations: IndexedList<string | string[]> = {
 	days: defaultDays,
 	months: defaultMonths,
 	prevMonth: '&larr;',

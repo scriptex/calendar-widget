@@ -90,7 +90,7 @@
             renderCalendar(startYear, startMonth, selectors, translations);
         });
     };
-    exports.defaultTranslations = {
+    var defaultTranslations = {
         days: defaultDays,
         months: defaultMonths,
         prevMonth: '&larr;',
@@ -102,7 +102,7 @@
         if (startYear === void 0) { startYear = defaultStartYear; }
         if (startMonth === void 0) { startMonth = defaultStartMonth; }
         if (container === void 0) { container = 'body'; }
-        if (translations === void 0) { translations = exports.defaultTranslations; }
+        if (translations === void 0) { translations = defaultTranslations; }
         get(container).innerHTML = renderTable(translations);
         renderCalendar(startYear, startMonth, selectors, translations);
         addListeners(startYear, startMonth, translations);
