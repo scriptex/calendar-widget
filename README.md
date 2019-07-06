@@ -30,54 +30,59 @@ The widget accepts four options which are optional:
 	}
 	```
 
-## Usage
+## Install
 
-The Calendar Widget assumes that you are using a module bundler such as Webpack, Rollup or SystemJS.
+```sh
+# Via NPM
+npm i simple-calendar-widget
 
-If you don't use any of those, please [open an issue](https://github.com/scriptex/calendar-widget/issues/new) and I will provide you with a fallback script.
-
-First, install or download this repository.
-
-Then import the script in your file:
-
-```javascript
-import { renderCalendarWidget } from 'calendar-widget';
-
-// Or if you downloaded it manually
-
-import { renderCalendarWidget } from '../your-downloaded-scripts/calendar-widget/dist/index.js';
-
-// You can also use the default export:
-import CalendarWidget from 'calendar-widget';
+# Via Yarn
+yarn add simple-calendar-widget
 ```
 
-You can now use the widget:
+## Usage
 
-```javascript
-// With default settings
+If you're using a module bundler such as Webpack, Rollup, Browserify:
+
+```js
+import { renderCalendarWidget } from 'simple-calendar-widget';
+
+// Default settings
 renderCalendarWidget();
 
-// With custom settings
-renderCalendarWidget(2019, 4, 'my-calendar-container', {
-	days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-	months: [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'Septemer',
-		'October',
-		'November',
-		'December'
-	],
-	prevMonth: '&larr;',
-	nextMonth: '&rarr;',
-	prevMonthTitle: 'Previous month',
-	nextMonthTitle: 'Next month'
+// Or custom settings
+renderCalendarWidget(2018, 0, '#calendar',     {
+	"days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+	"months": ["January", "February", "March", "April", "May", "June", "July", "August", "Septemer", "October", "November", "December"],
+	"prevMonth": "&larr;",
+	"nextMonth": "&rarr;",
+	"prevMonthTitle": "Previous month",
+	"nextMonthTitle": "Next month"
+});
+```
+
+If you're NOT using a module bundler such as Webpack, Rollup, Browserify:
+
+First include the script in your markup:
+
+```html
+<script src="PATH_TO_CALENDAR_WIDGET_SOURCE/dist/index.js"></script>
+```
+
+Then use the package:
+
+```js
+// Default settings
+renderCalendarWidget();
+
+// Or custom settings
+renderCalendarWidget(2018, 0, '#calendar',     {
+	"days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+	"months": ["January", "February", "March", "April", "May", "June", "July", "August", "Septemer", "October", "November", "December"],
+	"prevMonth": "&larr;",
+	"nextMonth": "&rarr;",
+	"prevMonthTitle": "Previous month",
+	"nextMonthTitle": "Next month"
 });
 ```
 
@@ -106,6 +111,12 @@ If you are using SCSS and wish to use the widget with custom settings, you can i
 	$calendar-color: rebeccapurple;
 	@include calendar($calendar-width, $calendar-color);
 }
+```
+
+You can also include the stylesheet in a `<link>` in your markup:
+
+```html
+<link rel="stylesheet" href="PATH_TO_CALENDAR_WIDGET_SOURCE/dist/index.css" />
 ```
 
 ## LICENSE
