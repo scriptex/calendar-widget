@@ -9,7 +9,7 @@ A super simple calendar widget written in TypeScript and SCSS implemented with a
 
 ## Demo
 
-If you wish to go directly to the demo, please click [here](https://codepen.io/scriptex/pen/mgLExx).
+If you wish to go directly to the demo, please click [here](https://codepen.io/scriptex/pen/mgLExx) or [here](https://github.com/scriptex/calendar-widget/blob/master/demo/index.html).
 
 ## Options
 
