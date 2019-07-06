@@ -1,5 +1,5 @@
 {
-	"name": "calendar-widget",
+	"name": "simple-calendar-widget",
 	"version": "0.1.0",
 	"description": "A super simple calendar widget written in TypeScript and SCSS",
 	"scripts": {
