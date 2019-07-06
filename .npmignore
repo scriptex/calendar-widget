@@ -14,6 +14,7 @@ node_modules/
 ._*
 .Spotlight-V100
 .Trashes
+.github
 ehthumbs.db
 Thumbs.db
 
@@ -36,12 +37,14 @@ yarn.lock
 
 # Config files
 .babelrc
+.whitesource
 renovate.json
 tslint.json
-ts-config.json
+tsconfig.json
 postcss.config.js
 webpack.config.js
 _config.yml
 _.config.yml
 
 # Project specific
+/demo
