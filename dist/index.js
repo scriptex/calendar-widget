@@ -5,7 +5,13 @@
     }
     else if (typeof define === "function" && define.amd) {
         define(["require", "exports"], factory);
-    }
+    } else {
+		window.renderCalendarWidget = (function() {
+			var obj = {};
+			factory(null, obj);
+			return obj.renderCalendarWidget;
+		})();
+	}
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -110,3 +116,9 @@
     exports.default = exports.renderCalendarWidget;
 });
 // Usage: renderCalendarWidget();
+// In UMD in dist
+// window.renderCalendarWidget = (function() {
+// 	var obj = {};
+// 	factory(null, obj);
+// 	return obj.renderCalendarWidget;
+// })();

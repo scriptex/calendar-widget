@@ -158,3 +158,12 @@ export const renderCalendarWidget = (
 export default renderCalendarWidget;
 
 // Usage: renderCalendarWidget();
+
+// In UMD in dist
+// window.renderCalendarWidget = (function() {
+// 	var obj = {};
+
+// 	factory(null, obj);
+
+// 	return obj.renderCalendarWidget;
+// })();
