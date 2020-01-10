@@ -1347,10 +1347,10 @@ pinkie@^2.0.0:
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
-postcss-cli@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-cli/-/postcss-cli-7.0.0.tgz#00edbbc68f7510cd57028f3e53ddecb787934572"
-  integrity sha512-dxn73RcKOennwaijmo2DjTOM3f2bcl/GSSUEqpguiHfRSfRLY3sUvbEy2vvuJ1RasuXCcJ0KvoGe9nSSA7mHQw==
+postcss-cli@7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-cli/-/postcss-cli-7.1.0.tgz#769b07b8865aaa3e98c7c63a3d256b4f51e3e237"
+  integrity sha512-tCGK0GO2reu644dUHxks8U2SAtKnzftQTAXN1dwzFPoKXZr0b7VX4vTkQ2Pl2Lunas6+o8uHR56hlcYBm1srZg==
   dependencies:
     chalk "^3.0.0"
     chokidar "^3.3.0"
