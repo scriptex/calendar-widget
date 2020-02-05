@@ -30,7 +30,7 @@
 		"autoprefixer": "9.7.4",
 		"node-sass": "4.13.1",
 		"postcss-cli": "7.1.0",
-		"postcss-flexbugs-fixes": "4.1.0",
+		"postcss-flexbugs-fixes": "4.2.0",
 		"tslint": "5.20.1",
 		"tslint-config-prettier": "1.18.0",
 		"typescript": "3.7.5"
