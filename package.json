@@ -33,6 +33,6 @@
 		"postcss-flexbugs-fixes": "4.2.0",
 		"tslint": "5.20.1",
 		"tslint-config-prettier": "1.18.0",
-		"typescript": "3.8.2"
+		"typescript": "3.8.3"
 	}
 }
