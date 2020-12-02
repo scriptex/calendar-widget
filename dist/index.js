@@ -5,16 +5,11 @@
     }
     else if (typeof define === "function" && define.amd) {
         define(["require", "exports"], factory);
-    } else {
-		window.renderCalendarWidget = (function() {
-			var obj = {};
-			factory(null, obj);
-			return obj.renderCalendarWidget;
-		})();
-	}
+    }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    exports.renderCalendarWidget = void 0;
     var doc = document;
     var defaultDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     var defaultMonths = [
@@ -48,10 +43,10 @@
     var renderDays = function (days) { return days.map(function (day) { return "<th>" + day + "</th>"; }).join(''); };
     var renderHeader = function (translations) { return "\n<thead>\n    <tr>\n        " + renderDays(translations.days) + "\n    </tr>\n</thead>\n"; };
     var renderTable = function (translations) { return "\n<table>\n    " + renderCaption(translations) + "\n    " + renderHeader(translations) + "\n    <tbody id=\"ts-calendar__body\"></tbody>\n</table>\n"; };
-    var renderCalendar = function (year, month, selectors, translations) {
-        var bodyEl = get(selectors.body);
-        var yearEl = get(selectors.year);
-        var monthEl = get(selectors.month);
+    var renderCalendar = function (year, month, selectorsList, translations) {
+        var bodyEl = get(selectorsList.body);
+        var yearEl = get(selectorsList.year);
+        var monthEl = get(selectorsList.month);
         var firstDay = new Date(year, month).getDay();
         var allDays = 32 - new Date(year, month, 32).getDate();
         var day = 1;
@@ -104,7 +99,7 @@
         prevMonthTitle: 'Previous month',
         nextMonthTitle: 'Next month'
     };
-    exports.renderCalendarWidget = function (startYear, startMonth, container, translations) {
+    var renderCalendarWidget = function (startYear, startMonth, container, translations) {
         if (startYear === void 0) { startYear = defaultStartYear; }
         if (startMonth === void 0) { startMonth = defaultStartMonth; }
         if (container === void 0) { container = 'body'; }
@@ -113,6 +108,7 @@
         renderCalendar(startYear, startMonth, selectors, translations);
         addListeners(startYear, startMonth, translations);
     };
+    exports.renderCalendarWidget = renderCalendarWidget;
     exports.default = exports.renderCalendarWidget;
 });
 // Usage: renderCalendarWidget();
