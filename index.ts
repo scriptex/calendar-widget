@@ -69,12 +69,12 @@ const renderTable = (translations: IndexedList<string | string[]>): string => `
 const renderCalendar = (
 	year: number,
 	month: number,
-	selectors: IndexedList<string>,
+	selectorsList: IndexedList<string>,
 	translations: IndexedList<string | string[]>
 ): void => {
-	const bodyEl: HTMLElement = get(selectors.body);
-	const yearEl: HTMLElement = get(selectors.year);
-	const monthEl: HTMLElement = get(selectors.month);
+	const bodyEl: HTMLElement = get(selectorsList.body);
+	const yearEl: HTMLElement = get(selectorsList.year);
+	const monthEl: HTMLElement = get(selectorsList.month);
 	const firstDay: number = new Date(year, month).getDay();
 	const allDays: number = 32 - new Date(year, month, 32).getDate();
 
