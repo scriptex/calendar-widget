@@ -27,7 +27,7 @@
 	"style": "dist/index.css",
 	"dependencies": {},
 	"devDependencies": {
-		"autoprefixer": "10.0.4",
+		"autoprefixer": "10.1.0",
 		"node-sass": "5.0.0",
 		"postcss": "8.1.14",
 		"postcss-cli": "8.3.0",
