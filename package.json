@@ -29,7 +29,7 @@
 	"devDependencies": {
 		"autoprefixer": "10.4.0",
 		"node-sass": "6.0.1",
-		"postcss": "8.4.3",
+		"postcss": "8.4.4",
 		"postcss-cli": "9.0.2",
 		"postcss-flexbugs-fixes": "5.0.2",
 		"tslint": "6.1.3",
