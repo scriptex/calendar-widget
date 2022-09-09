@@ -1,39 +1,49 @@
 {
 	"name": "simple-calendar-widget",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "A super simple calendar widget written in TypeScript and SCSS",
-	"scripts": {
-		"sass": "node-sass main.scss dist/index.css",
-		"postcss": "postcss dist/index.css -o dist/index.css -c postcss.config.js",
-		"css": "yarn sass && yarn postcss",
-		"js": "tsc -p .",
-		"lint": "tslint -p tsconfig.json -c tslint.json index.ts",
-		"build": "yarn js && yarn css"
-	},
 	"keywords": [
-		"Calendar",
 		"Widget",
-		"TypeScript",
-		"SCSS"
+		"Calendar",
+		"Calendar Widget",
+		"TypeScript Calendar"
 	],
-	"author": "Atanas Atanasov <scriptex.bg@gmail.com> (https://atanas.info)",
-	"repository": "git@github.com:scriptex/calendar-widget.git",
+	"homepage": "https://atanas.info/projects/calendar-widget.html",
 	"bugs": {
 		"url": "https://github.com/scriptex/calendar-widget/issues",
-		"email": "scriptex.bg@gmail.com"
+		"email": "hi@atanas.info"
 	},
 	"license": "MIT",
+	"author": "Atanas Atanasov <hi@atanas.info> (https://atanas.info)",
+	"funding": "https://github.com/sponsors/scriptex",
 	"main": "dist/index.js",
 	"style": "dist/index.css",
+	"types": "dist/index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "github:scriptex/calendar-widget"
+	},
+	"scripts": {
+		"sass": "sass src/main.scss dist/index.css",
+		"postcss": "postcss dist/index.css -o dist/index.css -c postcss.config.js",
+		"css": "yarn sass && yarn postcss",
+		"js": "tsc",
+		"lint": "eslint .",
+		"clear": "rm -rf dist && rm -rf demo/dist",
+		"copy": "cp -r dist demo",
+		"build": "yarn clear && yarn js && yarn css && yarn copy"
+	},
 	"dependencies": {},
 	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "5.36.2",
+		"@typescript-eslint/parser": "5.36.2",
 		"autoprefixer": "10.4.8",
-		"node-sass": "7.0.3",
+		"eslint": "8.23.0",
+		"eslint-config-prettier": "8.5.0",
 		"postcss": "8.4.16",
 		"postcss-cli": "10.0.0",
 		"postcss-flexbugs-fixes": "5.0.2",
-		"tslint": "6.1.3",
-		"tslint-config-prettier": "1.18.0",
+		"sass": "1.54.9",
 		"typescript": "4.8.3"
 	}
 }

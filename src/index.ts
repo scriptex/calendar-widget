@@ -1,11 +1,5 @@
-export interface IndexedList<T> {
-	[key: string]: T;
-}
-
-const doc: HTMLDocument = document;
-
+const doc: Document = document;
 const defaultDays: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
 const defaultMonths: string[] = [
 	'January',
 	'February',
@@ -21,7 +15,7 @@ const defaultMonths: string[] = [
 	'December'
 ];
 
-const selectors: IndexedList<string> = {
+const selectors: Record<string, string> = {
 	body: '#ts-calendar__body',
 	year: '#ts-calendar__year',
 	month: '#ts-calendar__month'
@@ -32,14 +26,14 @@ const defaultStartYear: number = today.getFullYear();
 const defaultStartMonth: number = today.getMonth();
 const defaultStartDay: number = today.getDate();
 
-const get = (selector: string): HTMLElement => doc.querySelector(selector);
+const get = (selector: string): HTMLElement | null => doc.querySelector(selector);
 
 const add = (type: string): HTMLElement => doc.createElement(type);
 
 // prettier-ignore
-const onClick = (selector: string, callback: (event: MouseEvent) => void): void => get(selector).addEventListener('click', callback);
+const onClick = (selector: string, callback: (event: MouseEvent) => void): void => get(selector)?.addEventListener('click', callback);
 
-const renderCaption = (translations: IndexedList<string | string[]>): string => `
+const renderCaption = (translations: Record<string, string | string[]>): string => `
 <caption>
     <button id="ts-calendar__prev" title="${translations.prevMonthTitle}">${translations.prevMonth}</button>
     <span id="ts-calendar__month"></span>
@@ -50,7 +44,7 @@ const renderCaption = (translations: IndexedList<string | string[]>): string => 
 
 const renderDays = (days: string[]): string => days.map((day: string): string => `<th>${day}</th>`).join('');
 
-const renderHeader = (translations: IndexedList<string | string[]>): string => `
+const renderHeader = (translations: Record<string, string | string[]>): string => `
 <thead>
     <tr>
         ${renderDays(translations.days as string[])}
@@ -58,8 +52,8 @@ const renderHeader = (translations: IndexedList<string | string[]>): string => `
 </thead>
 `;
 
-const renderTable = (translations: IndexedList<string | string[]>): string => `
-<table>
+const renderTable = (translations: Record<string, string | string[]>): string => `
+<table class="simple-calendar-widget">
     ${renderCaption(translations)}
     ${renderHeader(translations)}
     <tbody id="ts-calendar__body"></tbody>
@@ -69,25 +63,33 @@ const renderTable = (translations: IndexedList<string | string[]>): string => `
 const renderCalendar = (
 	year: number,
 	month: number,
-	selectorsList: IndexedList<string>,
-	translations: IndexedList<string | string[]>
+	selectorsList: Record<string, string>,
+	translations: Record<string, string | string[]>
 ): void => {
-	const bodyEl: HTMLElement = get(selectorsList.body);
-	const yearEl: HTMLElement = get(selectorsList.year);
-	const monthEl: HTMLElement = get(selectorsList.month);
+	const bodyEl: HTMLElement | null = get(selectorsList.body);
+	const yearEl: HTMLElement | null = get(selectorsList.year);
+	const monthEl: HTMLElement | null = get(selectorsList.month);
 	const firstDay: number = new Date(year, month).getDay();
 	const allDays: number = 32 - new Date(year, month, 32).getDate();
 
-	let day: number = 1;
+	let day = 1;
 
-	bodyEl.innerHTML = '';
-	yearEl.innerHTML = year.toString();
-	monthEl.innerHTML = translations.months[month];
+	if (bodyEl) {
+		bodyEl.innerHTML = '';
+	}
 
-	for (let i: number = 0; i < 6; i++) {
+	if (yearEl) {
+		yearEl.innerHTML = year.toString();
+	}
+
+	if (monthEl) {
+		monthEl.innerHTML = translations.months[month];
+	}
+
+	for (let i = 0; i < 6; i++) {
 		const tr: HTMLElement = add('tr');
 
-		for (let j: number = 0; j < 7; j++) {
+		for (let j = 0; j < 7; j++) {
 			const td: HTMLElement = add('td');
 
 			if (i === 0 && j < firstDay) {
@@ -107,11 +109,11 @@ const renderCalendar = (
 			tr.append(td);
 		}
 
-		bodyEl.append(tr);
+		bodyEl?.append(tr);
 	}
 };
 
-const addListeners = (startYear: number, startMonth: number, translations: IndexedList<string | string[]>): void => {
+const addListeners = (startYear: number, startMonth: number, translations: Record<string, string | string[]>): void => {
 	onClick('#ts-calendar__prev', (event: MouseEvent) => {
 		event.preventDefault();
 
@@ -135,7 +137,7 @@ const addListeners = (startYear: number, startMonth: number, translations: Index
 	});
 };
 
-const defaultTranslations: IndexedList<string | string[]> = {
+const defaultTranslations: Record<string, string | string[]> = {
 	days: defaultDays,
 	months: defaultMonths,
 	prevMonth: '&larr;',
@@ -147,23 +149,15 @@ const defaultTranslations: IndexedList<string | string[]> = {
 export const renderCalendarWidget = (
 	startYear: number = defaultStartYear,
 	startMonth: number = defaultStartMonth,
-	container: string = 'body',
-	translations: IndexedList<string | string[]> = defaultTranslations
+	container = 'body',
+	translations: Record<string, string | string[]> = defaultTranslations
 ) => {
-	get(container).innerHTML = renderTable(translations);
+	const el = get(container);
+
+	if (el) {
+		el.innerHTML = renderTable(translations);
+	}
+
 	renderCalendar(startYear, startMonth, selectors, translations);
 	addListeners(startYear, startMonth, translations);
 };
-
-export default renderCalendarWidget;
-
-// Usage: renderCalendarWidget();
-
-// In UMD in dist
-// window.renderCalendarWidget = (function() {
-// 	var obj = {};
-
-// 	factory(null, obj);
-
-// 	return obj.renderCalendarWidget;
-// })();
