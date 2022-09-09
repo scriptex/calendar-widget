@@ -1,0 +1,80 @@
+$defaultWidth: 20rem !default;
+$defaultBorderColor: lightgray !default;
+
+@mixin calendar($width: $defaultWidth, $borderColor: $defaultBorderColor) {
+	font-family: monospace;
+	font-size: 1rem;
+	line-height: 2;
+	text-transform: lowercase;
+	width: $width;
+	border: 2px solid $borderColor;
+	margin: 20px auto;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	caption {
+		border: 2px solid $borderColor;
+		border-bottom: 0;
+		overflow: hidden;
+
+		button {
+			padding-bottom: 2px;
+		}
+
+		span,
+		button {
+			text-align: center;
+			min-width: calc(#{$width} / 7 - 1px);
+			height: 32px;
+			display: inline-block;
+			vertical-align: top;
+			padding: 0;
+			border: 0;
+			box-sizing: border-box;
+			background: transparent;
+			border-radius: 0;
+			box-shadow: none;
+			appearance: none;
+
+			&:first-child {
+				min-width: calc(#{$width} / 7);
+				float: left;
+				border-right: 2px solid $borderColor;
+			}
+
+			&:last-child {
+				min-width: calc(#{$width} / 7);
+				float: right;
+				border-left: 2px solid $borderColor;
+			}
+
+			&:first-child,
+			&:last-child {
+				cursor: pointer;
+
+				&:hover {
+					background-color: $borderColor;
+				}
+			}
+		}
+	}
+
+	th,
+	td {
+		border: 2px solid $borderColor;
+	}
+
+	td {
+		padding: 0 0.5rem;
+	}
+
+	.is--empty {
+		background-color: rgba($borderColor, 0.2);
+		cursor: default;
+	}
+
+	.is--today {
+		background-color: rgba($borderColor, 0.5);
+	}
+}
