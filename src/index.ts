@@ -164,7 +164,7 @@ export const renderCalendarWidget = ({
 	startMonth = defaultStartMonth,
 	container = 'body',
 	translations = defaultTranslations
-}: CalendarWidgetOptions) => {
+}: CalendarWidgetOptions): void => {
 	const el = get(container);
 
 	if (el) {
