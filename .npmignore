@@ -22,6 +22,7 @@ Thumbs.db
 _config.yml
 _.config.yml
 .editorconfig
+.eslintrc
 .gitattributes
 .gitignore
 .nvmrc
@@ -31,9 +32,11 @@ _.config.yml
 .stylelintrc
 .travis.yml
 .whitesource
+postcss.config.js
 renovate.json
 tsconfig.json
 tslint.json
 yarn.lock
 
+demo
 !dist

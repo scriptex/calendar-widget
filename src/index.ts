@@ -1,3 +1,12 @@
+type CalendarWidgetStringOrArrayOfStrings = Record<string, string | string[]>;
+
+interface CalendarWidgetOptions {
+	startYear: number;
+	startMonth: number;
+	container: string;
+	translations: CalendarWidgetStringOrArrayOfStrings;
+}
+
 const doc: Document = document;
 const defaultDays: string[] = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const defaultMonths: string[] = [
@@ -33,7 +42,7 @@ const add = (type: string): HTMLElement => doc.createElement(type);
 // prettier-ignore
 const onClick = (selector: string, callback: (event: MouseEvent) => void): void => get(selector)?.addEventListener('click', callback);
 
-const renderCaption = (translations: Record<string, string | string[]>): string => `
+const renderCaption = (translations: CalendarWidgetStringOrArrayOfStrings): string => `
 <caption>
     <button id="ts-calendar__prev" title="${translations.prevMonthTitle}">${translations.prevMonth}</button>
     <span id="ts-calendar__month"></span>
@@ -44,7 +53,7 @@ const renderCaption = (translations: Record<string, string | string[]>): string 
 
 const renderDays = (days: string[]): string => days.map((day: string): string => `<th>${day}</th>`).join('');
 
-const renderHeader = (translations: Record<string, string | string[]>): string => `
+const renderHeader = (translations: CalendarWidgetStringOrArrayOfStrings): string => `
 <thead>
     <tr>
         ${renderDays(translations.days as string[])}
@@ -52,7 +61,7 @@ const renderHeader = (translations: Record<string, string | string[]>): string =
 </thead>
 `;
 
-const renderTable = (translations: Record<string, string | string[]>): string => `
+const renderTable = (translations: CalendarWidgetStringOrArrayOfStrings): string => `
 <table class="simple-calendar-widget">
     ${renderCaption(translations)}
     ${renderHeader(translations)}
@@ -64,7 +73,7 @@ const renderCalendar = (
 	year: number,
 	month: number,
 	selectorsList: Record<string, string>,
-	translations: Record<string, string | string[]>
+	translations: CalendarWidgetStringOrArrayOfStrings
 ): void => {
 	const bodyEl: HTMLElement | null = get(selectorsList.body);
 	const yearEl: HTMLElement | null = get(selectorsList.year);
@@ -113,7 +122,11 @@ const renderCalendar = (
 	}
 };
 
-const addListeners = (startYear: number, startMonth: number, translations: Record<string, string | string[]>): void => {
+const addListeners = (
+	startYear: number,
+	startMonth: number,
+	translations: CalendarWidgetStringOrArrayOfStrings
+): void => {
 	onClick('#ts-calendar__prev', (event: MouseEvent) => {
 		event.preventDefault();
 
@@ -137,7 +150,7 @@ const addListeners = (startYear: number, startMonth: number, translations: Recor
 	});
 };
 
-const defaultTranslations: Record<string, string | string[]> = {
+const defaultTranslations: CalendarWidgetStringOrArrayOfStrings = {
 	days: defaultDays,
 	months: defaultMonths,
 	prevMonth: '&larr;',
@@ -146,12 +159,12 @@ const defaultTranslations: Record<string, string | string[]> = {
 	nextMonthTitle: 'Next month'
 };
 
-export const renderCalendarWidget = (
-	startYear: number = defaultStartYear,
-	startMonth: number = defaultStartMonth,
+export const renderCalendarWidget = ({
+	startYear = defaultStartYear,
+	startMonth = defaultStartMonth,
 	container = 'body',
-	translations: Record<string, string | string[]> = defaultTranslations
-) => {
+	translations = defaultTranslations
+}: CalendarWidgetOptions) => {
 	const el = get(container);
 
 	if (el) {

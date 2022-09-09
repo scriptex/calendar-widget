@@ -8,7 +8,19 @@
 
 		<link rel="stylesheet" href="dist/index.css" />
 
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
+		/>
+
 		<script src="//unpkg.com/requirejs"></script>
+
+		<script
+			src="https://unpkg.com/scriptex-socials"
+			async
+			integrity="sha384-FDS8WECJvE4bGb+arLPh3DSv0mrVHD+hJRf+UaM6rVMT+wBleSgUlog90rrtgHH1"
+			crossorigin="anonymous"
+		></script>
 
 		<style>
 			html,
@@ -19,17 +31,39 @@
 			body {
 				margin: 0;
 				display: flex;
+				flex-flow: row wrap;
 				align-items: center;
+				align-content: center;
 				justify-content: center;
+			}
+
+			social-links {
+				display: block;
+				flex: 0 0 100%;
 			}
 		</style>
 	</head>
 	<body>
+		<a
+			href="https://github.com/scriptex/calendar-widget"
+			title="See code on Github"
+			class="github-fork-ribbon"
+			data-ribbon="See code on Github"
+		>
+			See code on Github
+		</a>
+
+		<div id="container"></div>
+
+		<social-links></social-links>
+
 		<script type="text/javascript">
 			var exports = {};
 
 			requirejs(['./dist/index.js'], ({ renderCalendarWidget }) => {
-				renderCalendarWidget();
+				renderCalendarWidget({
+					container: '#container'
+				});
 			});
 		</script>
 	</body>

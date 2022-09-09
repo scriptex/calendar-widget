@@ -31,7 +31,7 @@ If you wish to go directly to the demo, please click [here](https://codepen.io/s
 
 ## Options
 
-The widget accepts four options which are optional:
+The widget accepts an object with options which are optional:
 
 1. Start year - number - defaults to current year.
 2. Start month - number - defaults to current month (**It is zero based**).
@@ -80,26 +80,31 @@ import { renderCalendarWidget } from 'simple-calendar-widget';
 renderCalendarWidget();
 
 // Or custom settings
-renderCalendarWidget(2018, 0, '#calendar', {
-	days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-	months: [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'Septemer',
-		'October',
-		'November',
-		'December'
-	],
-	prevMonth: '&larr;',
-	nextMonth: '&rarr;',
-	prevMonthTitle: 'Previous month',
-	nextMonthTitle: 'Next month'
+renderCalendarWidget({
+	startYear: 2018,
+	startMonth: 0,
+	container: '#calendar',
+	translations: {
+		days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+		months: [
+			'January',
+			'February',
+			'March',
+			'April',
+			'May',
+			'June',
+			'July',
+			'August',
+			'Septemer',
+			'October',
+			'November',
+			'December'
+		],
+		prevMonth: '&larr;',
+		nextMonth: '&rarr;',
+		prevMonthTitle: 'Previous month',
+		nextMonthTitle: 'Next month'
+	}
 });
 ```
 
