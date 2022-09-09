@@ -27,7 +27,7 @@
 
 ## Demo
 
-If you wish to go directly to the demo, please click [here](https://codepen.io/scriptex/pen/mgLExx) or [here](https://github.com/scriptex/calendar-widget/blob/master/demo/index.html).
+If you wish to go directly to the demo, please click [here](https://codepen.io/scriptex/pen/mgLExx) or [here](https://calendar-widget.atanas.info/).
 
 ## Options
 
