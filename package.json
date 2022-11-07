@@ -1,6 +1,6 @@
 {
 	"name": "simple-calendar-widget",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A super simple calendar widget written in TypeScript and SCSS",
 	"keywords": [
 		"Widget",
@@ -8,7 +8,7 @@
 		"Calendar Widget",
 		"TypeScript Calendar"
 	],
-	"homepage": "https://atanas.info/projects/calendar-widget.html",
+	"homepage": "https://calendar-widget.atanas.info/",
 	"bugs": {
 		"url": "https://github.com/scriptex/calendar-widget/issues",
 		"email": "hi@atanas.info"
