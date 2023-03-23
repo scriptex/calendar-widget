@@ -43,7 +43,7 @@
 		"postcss": "8.4.21",
 		"postcss-cli": "10.1.0",
 		"postcss-flexbugs-fixes": "5.0.2",
-		"sass": "1.59.3",
+		"sass": "1.60.0",
 		"typescript": "5.0.2"
 	}
 }
