@@ -40,7 +40,7 @@
 		"autoprefixer": "10.4.14",
 		"eslint": "8.44.0",
 		"eslint-config-prettier": "8.8.0",
-		"postcss": "8.4.24",
+		"postcss": "8.4.25",
 		"postcss-cli": "10.1.0",
 		"postcss-flexbugs-fixes": "5.0.2",
 		"sass": "1.63.6",
