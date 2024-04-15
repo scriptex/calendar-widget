@@ -28,7 +28,7 @@
 		"postcss": "postcss dist/index.css -o dist/index.css -c postcss.config.js",
 		"css": "yarn sass && yarn postcss",
 		"js": "tsc",
-		"lint": "eslint .",
+		"lint": "eslint",
 		"clear": "rm -rf dist && rm -rf demo/dist",
 		"copy": "cp -r dist demo",
 		"build": "yarn clear && yarn js && yarn css && yarn copy"
