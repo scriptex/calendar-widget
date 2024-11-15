@@ -40,10 +40,10 @@
 		"autoprefixer": "10.4.20",
 		"eslint": "9.14.0",
 		"eslint-config-prettier": "9.1.0",
-		"postcss": "8.4.47",
+		"postcss": "8.4.49",
 		"postcss-cli": "11.0.0",
 		"postcss-flexbugs-fixes": "5.0.2",
-		"sass": "1.80.5",
+		"sass": "1.80.7",
 		"typescript": "5.6.3"
 	}
 }
