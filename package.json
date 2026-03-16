@@ -35,8 +35,8 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "8.56.1",
-		"@typescript-eslint/parser": "8.56.1",
+		"@typescript-eslint/eslint-plugin": "8.57.0",
+		"@typescript-eslint/parser": "8.57.0",
 		"autoprefixer": "10.4.27",
 		"eslint": "10.0.3",
 		"eslint-config-prettier": "10.1.8",
@@ -44,7 +44,7 @@
 		"postcss": "8.5.8",
 		"postcss-cli": "11.0.1",
 		"postcss-flexbugs-fixes": "5.0.2",
-		"sass": "1.97.3",
+		"sass": "1.98.0",
 		"typescript": "5.9.3"
 	}
 }
