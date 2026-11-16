@@ -38,13 +38,13 @@
 		"@typescript-eslint/eslint-plugin": "8.72.2",
 		"@typescript-eslint/parser": "8.72.2",
 		"autoprefixer": "10.6.2",
-		"eslint": "10.14.0",
+		"eslint": "10.15.0",
 		"eslint-config-prettier": "10.1.8",
 		"globals": "17.14.0",
 		"postcss": "8.5.33",
 		"postcss-cli": "12.0.0",
 		"postcss-flexbugs-fixes": "5.0.2",
-		"sass": "1.107.1",
+		"sass": "1.108.2",
 		"typescript": "5.9.3"
 	}
 }
